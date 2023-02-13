@@ -1,9 +1,13 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList() {
+function PlantList({plantData}) {
+  // When the app starts, I can see all plants.
+
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">{plantData.map((card)=>(
+      <PlantCard image={card.image} name={card.name} price={card.price} key={card.id}/>
+    ))}</ul>
   );
 }
 
